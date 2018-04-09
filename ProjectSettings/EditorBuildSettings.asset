@@ -6,5 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/test.unity
+    path: Assets/scenes/playDeck.unity
+    guid: 90f2a425ca699c546a480e1594af0c64
+  - enabled: 1
+    path: Assets/scenes/test.unity
     guid: a786b89aa3009104fa558c4bbcf63076
+  - enabled: 1
+    path: Assets/scenes/importDeck.unity
+    guid: 4fe625bd69572df468f9a3e847013da0
