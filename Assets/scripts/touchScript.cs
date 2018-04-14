@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class touchScript : MonoBehaviour
 {
+    public float distance;
     public Camera c;
     void Update()
     {
@@ -20,14 +21,18 @@ public class touchScript : MonoBehaviour
                 if (hit.collider.transform.parent != c.transform)
                 {
                     hit.collider.transform.parent = c.transform;
-                    hit.collider.transform.position = hit.collider.transform.position + new Vector3(0, 0, -8);
+                    Vector3 moveDir = (hit.collider.transform.position - transform.position).normalized;
+
+                    hit.collider.transform.position = moveDir * distance;
                     Debug.Log("You selected " + hit.collider.transform.name); // ensure you picked right object
 
                 }
                 else
                 {
                     hit.collider.transform.parent = null;
-                    hit.collider.transform.position = hit.collider.transform.position + new Vector3(0, 0, 8);
+                    Vector3 moveDir = (hit.collider.transform.position - transform.position).normalized;
+
+                    hit.collider.transform.position = moveDir * distance;
                     Debug.Log("You unselected " + hit.collider.transform.name); // ensure you picked right object
 
                 }
@@ -42,14 +47,18 @@ public class touchScript : MonoBehaviour
                 if (hit.collider.transform.parent != c.transform)
                 {
                     hit.collider.transform.parent = c.transform;
-                    hit.collider.transform.position = hit.collider.transform.position + new Vector3(0, 0, -8);
+                    Vector3 moveDir = (hit.collider.transform.position - transform.position).normalized;
+
+                    hit.collider.transform.position = moveDir * distance;
                     Debug.Log("You selected " + hit.collider.transform.name); // ensure you picked right object
 
                 }
                 else
                 {
                     hit.collider.transform.parent = null;
-                    hit.collider.transform.position = hit.collider.transform.position + new Vector3(0, 0, 8);
+                    Vector3 moveDir = (hit.collider.transform.position - transform.position).normalized;
+
+                    hit.collider.transform.position = moveDir * distance;
                     Debug.Log("You unselected " + hit.collider.transform.name); // ensure you picked right object
 
                 }
